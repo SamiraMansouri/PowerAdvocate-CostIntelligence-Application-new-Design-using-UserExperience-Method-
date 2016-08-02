@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cost Intelligence</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://code.jquary.com/jquery-latest.min.js"
+	type="test/javascript"></script>
+	  <link rel="stylesheet" href="styles/kendo.common.min.css" />
+    <link rel="stylesheet" href="styles/kendo.default.min.css" />
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.common.min.css"/>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.rtl.min.css"/>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.silver.min.css"/>
+    <link rel="stylesheet" href="http://kendo.cdn.telerik.com/2016.1.412/styles/kendo.mobile.all.min.css"/>
+
+
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.1.412/js/kendo.all.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://kendo.cdn.telerik.com/2016.1.412/js/kendo.all.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.all.min.js"></script>
+</head>
+<style>
+.nav .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+	color: #ffff; /*Sets the text hover color on navbar*/
+}
+
+.nav .nav-tabs>.active>a, .nav .nav-tabs>.active>a:hover, .nav .nav-tabs>.active>a:focus
+	{
+	color: black; /*BACKGROUND color for active*/
+	background-color: red;
+}
+
+.nav {
+	background-color: #eff1fa;
+	border-color: white;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+	text-decoration: none;
+	background-color: silver; /*Change rollover cell color here*/
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: white; /*Change active text color here*/
+}
+
+bottomspaces {
+	margin-bottom: 20cm;
+}
+
+.top-buffer {
+	margin-top: 20px;
+}
+
+.left-buffer {
+	margin-left: 20px;
+}
+
+.nav .nav-tabs {
+	display: inline-block;
+	float: none;
+	vertical-align: top;
+}
+
+.nav .navbar-collapse {
+	text-align: center;
+}
+
+lineblue {
+	border-bottom: 5pt solid black;
+}
+
+.navbar-nav {
+	width: 100%;
+	text-align: center; > li { float : none;
+	display: inline-block;
+}
+
+}
+.btn-warning.btn-outline {
+	color: #f0ad4e;
+}
+
+.btn-warning.btn-outline:hover {
+	color: #fff;
+}
+
+.btn-outline {
+	background-color: transparent;
+	color: inherit;
+	transition: all 1s;
+}
+
+#bs-example-navbar-collapse-1 {
+	padding: 0;
+}
+
+.breadcrumb {
+	background-color: #fff;
+	padding-top: 2%;
+	margin-bottom: 15%;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.dropdown-toggle-1 {
+	
+}
+
+.glyphicon-1 {
+	font-size: 30px;
+	padding: 0;
+}
+
+#glyph {
+	margin-top: 10px;
+}
+
+#description {
+	background-color: #b3daff;
+}
+
+.choices {
+	background-color: #e6e6e6;
+	margin-top: 3%;
+	padding: 2%;
+	padding-left: 4%;
+	font-size: 12px;
+}
+
+div.mytree div {
+	padding-left: 20px;
+	background: transparent url(http://www3.tellus.net/jianlu58/bullet.gif)
+		no-repeat top left;
+}
+
+div.mytree div.parent div {
+	display: none;
+	cursor: default;
+}
+
+div.mytree div.expanded {
+	background: transparent url(http://www3.tellus.net/jianlu58/minus.gif)
+		no-repeat top left;
+}
+
+.commonLinks {
+	color: #FFA834;
+}
+</style>
+<script>
+	$(function() {
+		$('div.mytree div:has(div)').addClass('parent');
+		$('div.mytree div').click(function() {
+
+			var thistree = $(this);
+			thistree.children('div').toggle();
+			thistree.filter('.parent').toggleclass('expanded');
+			return false;
+		})
+	});
+</script>
+<script>
+$("#chart").kendoChart({
+  axisDefaults: {
+    categories: [ "samira", "mansouri"]
+  },
+  series: [
+    { data: [12, 34, 56] }
+  ]
+});
+</script>
+    
+<body>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-4">
+				<img src="logo.png" alt="logo" style="width: 105px; height: 40px;">
+			</div>
+			<div class="col-md-8">
+				<span class="pull-right"> <img src="logo2.png" alt="logo"
+					style="width: 250px; height: 40px;">
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<ul class="nav nav-tabs">
+				<li role="presentation"><a href="#"><b>Spend
+							Intelligence</b></a></li>
+				<li role="presentation" class="active"><a href="#">Cost
+						Intelligence</a></li>
+				<li role="presentation"><a href="#"><b>Market
+							Intelligence</b></a></li>
+				<li role="presentation"><a href="#"><b>Sourcing
+							Intelligence</b></a></li>
+				<li role="presentation"><a href="#"><b>Contract
+							Intelligence</b></a></li>
+				<li role="presentation"><a href="#"><b>Supplier
+							Intelligence</b></a></li>
+			</ul>
+		</div>
+		<div class="row navigationBar">
+			<ol class="breadcrumb">
+				<li><a href="#">Home</a></li>
+				<li class="active">Onshore Oil Pipeline Construction</li>
+				<li class="active">Index & Forecast</li>
+			</ol>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-2"></div>
+			<div class="col-lg-8">
+				<div class="input-group">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default dropdown-toggle"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							All <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu">
+							<li><a href="#">All</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Model</a></li>
+							<li><a href="#">Item</a></li>
+							<li><a href="#">Commodity</a></li>
+						</ul>
+					</div>
+					<!-- /btn-group -->
+
+					<input type="text" class="form-control" placeholder="Search for...">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+						</button>
+					</span>
+				</div>
+				<!-- /input-group -->
+			</div>
+			<!-- lg-6 -->
+			<div class="col-lg-2"></div>
+		</div>
+		<!-- /row -->
+
+		<div class="row">
+			<div class="col-md-12">
+				<img src="analytics2.jpg" alt="logo"
+					style="width: 100%; height: auto;">
+			</div>
+		</div>
+		<div class="row">
+			<div class="collapse navbar-collapse "
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">MODEL</a></li>
+					<li class="pull-left"><a href="#">ITEM</a></li>
+					<li><a href="#">COMMODITY</a></li>
+					<li><a href="#">DOCUMENTS</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- /.navbar-collapse -->
+		<div class="row " id="glyph">
+			<div class="col-md-10"></div>
+			<div class="col-md-1">
+				<div class="dropdown">
+					<button class="btn btn-primary dropdown-toggle-1" type="button"
+						data-toggle="dropdown">
+						monthly <span class="caret"></span>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a href="#">monthly</a></li>
+						<li><a href="#">quarterly</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-1 glyphicon-1">
+				<a href="#"><span class="glyphicon  glyphicon-print pull-right"></span></a>
+				<a href="#"><span
+					class="glyphicon  glyphicon-download pull-right "
+					style="padding-right: 15px;"></span></a>
+			</div>
+
+		</div>
+
+		<!-- row glyphons -->
+		<div class="row" style="margin-top: 3%;">
+			<div class="col-md-4" style="height: 100%;">
+				<div class="panel panel-default" style="height: 100%;">
+
+					<div>
+						<button type="button" class="btn btn-link"
+							style="font-size: 10px;">Collapse All</button>
+					</div>
+					<div>
+						<button type="button" class="btn btn-link commonLinks">Properties</button>
+						<button type="button" class="btn btn-link commonLinks">Configuration</button>
+						<button type="button" class="btn btn-link commonLinks">Exposure</button>
+					</div>
+					<div class="mytree">
+						<div>Construction Labor</div>
+						<div>Line Pipe and Instrumentation</div>
+						<div>Line Pipe</div>
+						<div>*24" Dial Line Pipe</div>
+						<div>Mainline Block Valves</div>
+						<div>Transportation</div>
+						<div>Field Instrumentation</div>
+						<div>Professional Services</div>
+						<div>Pump Station</div>
+						<div>Pipeline Construction Equipment</div>
+						<div>Auxiliary Facilities</div>
+
+					</div>
+				</div>
+
+			</div>
+			<!-- treeview -->
+			<div class="col-md-8">
+				<div class="panel panel-default panel-info" id="description">
+					<h3 style="margin-left: 3%;">24" Dia Line Pipe</h3>
+					<p style="margin-left: 3%;">The Line Pipe Item represents the
+						manufactured cost of large-diameter steel pipe that is used in
+						long-distance pipeline systems. This item assumes that the line
+						pipe is laid in 18 foot lengths.F</p>
+				</div>
+				<!-- description -->
+				<div>
+					<label class="radio-inline"> <input type="radio"
+						name="optradio" checked="true">Chart
+					</label> <label class="radio-inline"> <input type="radio"
+						name="optradio" >List
+					</label>
+				</div>
+				<!-- radiobuttons -->
+<div id="chart"></div>
+
+                <!-- chart -->
+<div id="example" >
+    <div class="demo-section k-content wide">
+        <div id="chart" style ="wideth:100%; height:100%;"></div>
+    </div>
+    <div class="box wide">
+        <div class="box-col">
+            <h4>Labels Configuration</h4>
+            <ul class="options">
+                <li>
+                    <input id="labels" checked="checked" type="checkbox" autocomplete="off" />
+                    <label for="labels">Show labels</label>
+                </li>
+                <li>
+                    <input id="alignCircle" name="alignType" type="radio"
+                           value="circle" checked="checked" autocomplete="off" />
+                    <label for="alignCircle">Aligned in circle</label>
+                </li>
+                <li>
+                    <input id="alignColumn" name="alignType" type="radio"
+                           value="column" autocomplete="off" />
+                    <label for="alignColumn">Aligned in columns</label>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function createChart() {
+            $("#chart").kendoChart({
+                title: {
+                    text: " "
+                },
+                legend: { labels: {
+                    margin: {
+                        right: 10,
+                        top:5
+                      },padding:{right:100},font: "10px sans-serif",
+                    },
+                    offsetY: 10,
+                   position: "bottom",
+                	   align: "start",
+                	   dashType: "solid",
+                	   width: 4
+                },
+                seriesDefaults: {
+                    labels: {
+                        template: "#= category # - #= kendo.format('{0:P}', percentage)#",
+                        position: "outsideEnd",
+                        visible: true,
+                        background: "transparent"
+                    }
+                },
+                series: [{
+                    type: "pie",
+                    data: [{
+                    	value: 37,
+                        category: "SPM: Spot Price, Hot -Rolled Carbon Sheet, Midwest"
+                        
+                    }, {
+                        category: "AHE:Foundries",
+                        value: 18.4
+                    }, {
+                        category: "PPI:Industrial Electric Power",
+                        value: 11.2
+                    }, {
+                        category: "OET 24' Dia Line Pipe, Overhead",
+                        value: 8.8
+                    }, {
+                        category: "PPI Welding machine and equipment",
+                        value: 8.6
+                    }, {
+                        category: "IM 24' Dia Line Pipe, Industry Margin",
+                        value: 8.2
+                    }, {
+                        category: "AHE Iron and Steel Mills",
+                        value: 7.7
+                    }, {
+                        category: "Other",
+                        value: 5.5
+                    }]
+                }],
+                tooltip: {
+                    visible: true,
+                    template: "#= category # - #= kendo.format('{0:P}', percentage) #"
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            createChart();
+            $(document).bind("kendo:skinChange", createChart);
+            $(".box").bind("change", refresh);
+        });
+
+        function refresh() {
+            var chart = $("#chart").data("kendoChart"),
+                pieSeries = chart.options.series[0],
+                labels = $("#labels").prop("checked"),
+                alignInputs = $("input[name='alignType']"),
+                alignLabels = alignInputs.filter(":checked").val();
+
+            chart.options.transitions = false;
+            pieSeries.labels.visible = labels;
+            pieSeries.labels.align = alignLabels;
+
+            alignInputs.attr("disabled", !labels);
+
+            chart.refresh();
+        }
+    </script>
+</div>
+
+ <table class="table table-bordered" style="margin-top:5%;">
+    <thead>
+      <tr>
+        <th>Commodity</th>
+        <th>Description</th>
+        <th>Percentage</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>SPM</td>
+        <td>Spot Price, Hot -Rolled Carbon Sheet, Midwest</td>
+        <td>37%</td>
+      </tr>
+      <tr>
+        <td>AHE</td>
+        <td>Foundries</td>
+        <td>18.4</td>
+      </tr>
+      <tr>
+        <td>PPI</td>
+        <td>Industrial Electric Power</td>
+        <td>11.2</td>
+      </tr>
+            <tr>
+        <td>OET</td>
+        <td>24" Dia Line Pipe, Overhead</td>
+        <td>8.8</td>
+      </tr>
+           <tr>
+        <td>PPI</td>
+        <td>Welding machine and equipment</td>
+        <td>8.6</td>
+      </tr>
+          <tr>
+        <td>IM</td>
+        <td>24" Dia Line Pipe, Industry Margin</td>
+        <td>8.2</td>
+      </tr>
+           <tr>
+        <td>AHE</td>
+        <td>Iron and Steel Mills</td>
+        <td>7.7</td>
+      </tr>
+              <tr>
+        <td>Other</td>
+        <td></td>
+        <td>5.5</td>
+      </tr>
+    </tbody>
+  </table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

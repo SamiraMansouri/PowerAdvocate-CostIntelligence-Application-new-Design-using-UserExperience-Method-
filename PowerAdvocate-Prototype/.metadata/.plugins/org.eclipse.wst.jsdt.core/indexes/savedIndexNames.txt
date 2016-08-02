@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/Users/apple/Desktop/Cources/User Experience Test and Design/Project/PowerAdvocate-Prototype/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+3370189359.index
+3168134584.index
+1834968812.index
+2962788872.index
+393930766.index
+1574658695.index

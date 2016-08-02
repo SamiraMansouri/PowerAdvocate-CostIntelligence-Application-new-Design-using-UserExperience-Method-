@@ -1,0 +1,91 @@
+package com.powerAdvocate.prototype;
+
+import java.util.Locale;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+/**
+ * Handles requests for the application home page.
+ */
+@Controller
+public class HomeController {
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String home(Locale locale, Model model) {
+		
+		return "home";
+	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String goHome(Locale locale, Model model) {
+		
+		return "home";
+	}
+	
+	
+	@RequestMapping(value = "/Item", method = RequestMethod.GET)
+	public String firstPageItem(Locale locale, Model model) {
+		
+		return "Item";
+	}
+	
+	@RequestMapping(value = "/Commodity", method = RequestMethod.GET)
+	public String firstPageCommodity(Locale locale, Model model) {
+		
+		return "Commodity";
+	}
+	
+	@RequestMapping(value = "/CommodityIndex&Forcast", method = RequestMethod.GET)
+	public String secondPageCommodityIndexForcast(Locale locale, Model model) {
+		
+		return "Commodity index & forcast";
+	}
+	
+	@RequestMapping(value = "/Commentary", method = RequestMethod.GET)
+	public String secondPageCommentary(Locale locale, Model model) {
+		
+		return "Commentary";
+	}
+	
+	@RequestMapping(value = "/CostBreakdownList", method = RequestMethod.GET)
+	public String secondPageCostBreakdownList(Locale locale, Model model) {
+		
+		return "Cost Breakdown-List";
+	}
+
+	@RequestMapping(value = "/CostBreakdown1", method = RequestMethod.GET)
+	public String secondPageCostBreakdown1(Locale locale, Model model) {
+		
+		return "CostBreakdown1";
+	}
+	
+	@RequestMapping(value = "/CostBreakdown2", method = RequestMethod.GET)
+	public String secondPageCostBreakdown2(Locale locale, Model model) {
+		
+		return "CostBreakdown2";
+	}
+	
+	@RequestMapping(value = "/PriceForecastIndex", method = RequestMethod.GET)
+	public String secondPagePriceForecastIndex(Locale locale, Model model) {
+		
+		return "Price Forecast-index";
+	}
+	
+	@RequestMapping(value = "/PriceForecastShouldCostgraph", method = RequestMethod.GET)
+	public String secondPagePriceForecastShouldCostgraph(Locale locale, Model model) {
+		
+		return "PriceForecast-should-costgraph";
+	}
+	
+	@RequestMapping(value = "/CommodityExposure", method = RequestMethod.GET)
+	public String secondPageCommodityExposure(Locale locale, Model model) {
+		
+		return "PriceForecast-should-costgraph";
+	}
+	
+}
