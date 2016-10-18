@@ -1,0 +1,3 @@
+# PowerAdvocate-CostIntelligence-Application-new-Design-using-UserExperience-Method-
+Scope: Executing the user experience design for the Power Advocate’s Cost Intelligent web application based on the result of user experience research methods, and performed the quality assurance and automate testing with Selenium for the provided design.
+Role: Performed user experience research methods such as Interviews, Concept Testing, Desirability Studies, and A/B Testing, developed the font-end design using Bootstrap and JavaScript, executed the quality assurance, and did the automate testing using Selenium.
